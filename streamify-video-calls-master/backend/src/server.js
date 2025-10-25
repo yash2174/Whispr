@@ -15,14 +15,17 @@ const PORT = process.env.PORT;
 
 const __dirname = path.resolve();
 
+import cors from "cors";
+
 app.use(
   cors({
     origin: process.env.NODE_ENV === "production"
-      ? "https://whispr-delta.vercel.app/"
-      : "http://localhost:5173",
-    credentials: true,
+      ? "https://whispr-delta.vercel.app/" // Vercel frontend URL
+      : "http://localhost:5173", // dev URL
+    credentials: true, // allow cookies
   })
 );
+
 
 
 app.use(express.json());
