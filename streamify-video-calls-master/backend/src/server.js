@@ -17,10 +17,13 @@ const __dirname = path.resolve();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
-    credentials: true, // allow frontend to send cookies
+    origin: process.env.NODE_ENV === "production"
+      ? "https://whispr-delta.vercel.app/"
+      : "http://localhost:5173",
+    credentials: true,
   })
 );
+
 
 app.use(express.json());
 app.use(cookieParser());
