@@ -19,7 +19,7 @@ const __dirname = path.resolve();
 app.use(
   cors({
     origin: process.env.NODE_ENV === "production"
-      ? "https://whispr-jt3s.vercel.app/" // Vercel frontend URL
+      ? "https://whispr-jt3s.vercel.app" // Vercel frontend URL
       : "http://localhost:5173", // dev URL
     credentials: true, // allow cookies
   })
